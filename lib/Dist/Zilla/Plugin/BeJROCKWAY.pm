@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::BeJROCKWAY;
 BEGIN {
-  $Dist::Zilla::Plugin::BeJROCKWAY::VERSION = '1.102910';
+  $Dist::Zilla::Plugin::BeJROCKWAY::VERSION = '1.102911';
 }
 # ABSTRACT: Sets the author/license/copyright year to be me/Perl 5/now
 use Moose;
@@ -36,7 +36,7 @@ Dist::Zilla::Plugin::BeJROCKWAY - Sets the author/license/copyright year to be m
 
 =head1 VERSION
 
-version 1.102910
+version 1.102911
 
 =head1 AUTHOR
 

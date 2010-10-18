@@ -1,6 +1,6 @@
 package Dist::Zilla::PluginBundle::JROCKWAY;
 BEGIN {
-  $Dist::Zilla::PluginBundle::JROCKWAY::VERSION = '1.102910';
+  $Dist::Zilla::PluginBundle::JROCKWAY::VERSION = '1.102911';
 }
 # ABSTRACT: JROCKWAY does not like boilerplate
 use Moose;
@@ -41,7 +41,6 @@ sub configure {
     $self->add_plugins(qw(
        BeJROCKWAY
        AutoPrereqs
-       AutoVersion
        PkgVersion
        PodSyntaxTests
        PodWeaver
@@ -66,7 +65,17 @@ sub configure {
        'NextRelease' => {
            format => '%-9v%{EEE LLL d hh:mm:ss vvv YYYY}d',
        },
+   ], [
+       'Git::NextVersion' => {
+           first_version  => '0.01',
+           version_regexp => q{}.qr/^(\d+[.]\d+)$/,
+       },
    ]);
+
+    $self->add_bundle( '@Git' => {
+        tag_format  => '%v',
+        tag_message => '%v CPAN release',
+    });
 }
 
 __PACKAGE__->meta->make_immutable;
@@ -83,14 +92,11 @@ Dist::Zilla::PluginBundle::JROCKWAY - JROCKWAY does not like boilerplate
 
 =head1 VERSION
 
-version 1.102910
+version 1.102911
 
 =head1 DESCRIPTION
 
-This basically sets everything up the way I like.  Actually, I don't
-like RJBS-style versions, but they are convenient and I think it's
-cool to say "I released Foo colon colon Bar version
-1.2349857213094852734958273450928736459872346587234 today".
+This basically sets everything up the way I like.
 
 =head1 AUTHOR
 

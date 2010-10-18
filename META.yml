@@ -45,20 +45,16 @@ requires:
   namespace::autoclean: 0
 resources:
   repository: http://github.com/jrockway/dist-zilla-pluginbundle-jrockway
-version: 1.102910
+version: 1.102911
 x_Dist_Zilla:
   plugins:
     -
       class: Dist::Zilla::Plugin::BeJROCKWAY
       name: '@JROCKWAY/BeJROCKWAY'
-      version: 1.102910
+      version: 1.102911
     -
       class: Dist::Zilla::Plugin::AutoPrereqs
       name: '@JROCKWAY/AutoPrereqs'
-      version: 4.102342
-    -
-      class: Dist::Zilla::Plugin::AutoVersion
-      name: '@JROCKWAY/AutoVersion'
       version: 4.102342
     -
       class: Dist::Zilla::Plugin::PkgVersion
@@ -144,6 +140,26 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::NextRelease
       name: '@JROCKWAY/NextRelease'
       version: 4.102342
+    -
+      class: Dist::Zilla::Plugin::Git::NextVersion
+      name: '@JROCKWAY/Git::NextVersion'
+      version: 1.102810
+    -
+      class: Dist::Zilla::Plugin::Git::Check
+      name: '@JROCKWAY/@Git/Check'
+      version: 1.102810
+    -
+      class: Dist::Zilla::Plugin::Git::Commit
+      name: '@JROCKWAY/@Git/Commit'
+      version: 1.102810
+    -
+      class: Dist::Zilla::Plugin::Git::Tag
+      name: '@JROCKWAY/@Git/Tag'
+      version: 1.102810
+    -
+      class: Dist::Zilla::Plugin::Git::Push
+      name: '@JROCKWAY/@Git/Push'
+      version: 1.102810
     -
       class: Dist::Zilla::Plugin::FinderCode
       name: ':InstallModules'
